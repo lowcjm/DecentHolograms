@@ -71,7 +71,7 @@ shadowJar {
 publishing {
     publications {
         create("shadow", MavenPublication) {
-            from(components["java"] as SoftwareComponent)
+            from(components["java"])
             artifactId = "decentholograms"
         }
     }
