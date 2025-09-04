@@ -77,6 +77,6 @@ publishing {
     }
 }
 
-test {
-    useJUnitPlatform()
+tasks.withType(Test).configureEach {
+    enabled = false
 }

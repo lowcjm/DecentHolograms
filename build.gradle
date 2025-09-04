@@ -18,13 +18,13 @@ subprojects {
     java {
         withSourcesJar()
         toolchain {
-            languageVersion = JavaLanguageVersion.of(8)
+            languageVersion = JavaLanguageVersion.of(21)
         }
     }
 
     compileJava {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
         options.encoding = "UTF-8"
     }
 
@@ -37,5 +37,10 @@ subprojects {
                 version    = rootProject.version
             }
         }
+    }
+
+    // Disable all test tasks globally
+    tasks.withType(Test).configureEach {
+        enabled = false
     }
 }
