@@ -1,0 +1,76 @@
+# Java/Maven/IntelliJ
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.ipr
+*.iws
+.idea/
+*.log
+out/
+target/
+lib/*.jar
+*.db
+*.sqlite
+*.yml
+*.lock
+.DS_Store
+.gradle/
+build/
+# Silo Plugin
+
+A Minecraft Spigot plugin for advanced silo management, supporting sell wands and economy integration (Vault and TunnelSellWands).
+
+## Features
+- Silo barrels with item storage and upgrades
+- Sell all items using any sell wand (supports TunnelSellWands API)
+- Economy integration (Vault fallback)
+- DecentHolograms support for hologram displays
+- SQLite database for persistent silo storage
+
+## Setup
+1. **Clone or upload this repository to GitHub.**
+2. **Open in IntelliJ IDEA:**
+   - Use "Open" and select the project folder.
+   - IntelliJ will detect the Maven project and set up dependencies.
+3. **Add plugin jars to `lib/`:**
+   - Place `DecentHolograms-2.9.7.jar` and `TunnelSellWands-1.1.0.jar` in the `lib/` folder.
+   - These are referenced in `pom.xml` as system dependencies.
+4. **Build:**
+   - Use Maven ("Build Project" or `mvn package`) to build the plugin jar.
+5. **Deploy:**
+   - Copy the built jar from `target/` to your server's `plugins/` folder.
+
+## Development Notes
+- If you update TunnelSellWands, ensure its API is available for compilation.
+- For full API support, you may need a separate TunnelSellWands-API jar.
+- The plugin is compatible with Java 21 and Spigot 1.21+.
+
+## File Structure
+```
+Silo/
+├── pom.xml
+├── README.md
+├── .gitignore
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── tunnel/
+│       │       └── silo/
+│       │           ├── Silo.java
+│       │           └── SiloDatabase.java
+│       └── resources/
+│           └── plugin.yml
+├── lib/
+│   ├── DecentHolograms-2.9.7.jar
+│   └── TunnelSellWands-1.1.0.jar
+└── target/
+```
+
+## .gitignore
+See included .gitignore for recommended exclusions.
+
+## License
+MIT or your preferred license.
+

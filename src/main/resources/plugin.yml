@@ -1,0 +1,14 @@
+name: Silo
+version: '1.0-SNAPSHOT'
+main: tunnel.silo.Silo
+api-version: '1.21'
+softdepend:
+  - Vault
+  - EconomyShopGUI
+commands:
+  silo:
+    description: Silo management command
+    usage: /silo
+  givesilo:
+    description: Give a player a silo
+    usage: /givesilo <player>
